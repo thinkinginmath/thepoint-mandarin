@@ -20,3 +20,7 @@ section.white-font h4 {
 section.white-font h3 {
   color: white;
 }
+
+a.cr-ref {
+  font-size: 12px;
+}
