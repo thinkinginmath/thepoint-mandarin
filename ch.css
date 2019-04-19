@@ -1,0 +1,14 @@
+table.nb {
+    margin: auto;
+    border-collapse: collapse;
+    border: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-spacing: 0;
+}
+
+table.nb td {
+
+    border-bottom: 0;
+
+}
