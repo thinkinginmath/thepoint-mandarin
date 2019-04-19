@@ -12,3 +12,11 @@ table.nb td {
     border-bottom: 0;
 
 }
+.reveal section img { background:none; border:none; box-shadow:none; }
+
+section.white-font h4 {
+  color: white;
+}
+section.white-font h3 {
+  color: white;
+}
