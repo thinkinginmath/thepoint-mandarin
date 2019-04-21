@@ -120,7 +120,7 @@ $("#target").submit(function( event ) {
   var param = book.substring(pos);
   var bookNameEng = MAP_BOOKNAMES[bookName];
   jQuery.ajax({
-      url:'http://getbible.net/json',
+      url:'https://getbible.net/json',
       dataType: 'jsonp',
       data: 'v=cut&p=' + bookNameEng + param,
       jsonp: 'getbible',
