@@ -85,7 +85,7 @@ var MAP_BOOKNAMES = {};
 for (var i = 0; i < list_txt.length; i++) {
     var txt = list_txt[i];
     var name_val = txt.split(/\s+/);
-    MAP_BOOKNAMES[name_val[0]] = " ".join(name_val[1:]);
+    MAP_BOOKNAMES[name_val[0]] = name_val.slice(1).join(" ");
     //console.log(name_val[0], name_val[1]);
 }
 </script>
