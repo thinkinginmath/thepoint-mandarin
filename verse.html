@@ -1,120 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Hello!</title>
     <meta charset="utf-8">
-    <!-- Latest compiled and minified CSS -->
-
-
-    <!-- jQuery library -->
-   
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+          crossorigin="anonymous">
 
 <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<script>
-var mapping = `创	Ge
-創世紀  Ge
-
-出	Ex
-利	Le
-民	Nu
-申	De
-书	Jos
-士	Ju
-得	Ru
-撒上	1 S
-撒下	2 S
-王上	1 K
-王下	2 K
-代上	1 Chr
-代下	2 Chr
-拉	Ezr
-尼	Ne
-斯	Est
-伯	Job
-诗	Ps
-詩篇    Ps
-箴	Pr
-传	Ec
-歌	Song
-赛	Is
-以賽亞書 Is
-耶	Je
-哀	La
-结	Ez
-但	Da
-何	Ho
-珥	Joel
-摩	Am
-俄	Obad
-拿	Jona
-弥	Mi
-鸿	Na
-哈	Ha
-番	Zeph
-该	Hagg
-亚	Zech
-玛	Ma
-太	Mt
-可	Mak
-路	Lk
-约	Jn
-徒	Acts
-罗	Ro
-林前	1 Co
-林后	2 Co
-加	Ga
-弗	Ep
-腓	Phl
-西	Co
-帖前	1 Th
-帖后	2 Th
-提前	1 Ti
-提后	2 Ti
-多	Tit
-门	Phm
-来	He
-雅	Ja
-彼前 1 Pe
-彼后 2 Pe
-约一 1 Jhn
-约二 2 Jhn
-约三 3 Jhn
-犹 Jude
-啟示錄 Re
-启 Re`;
-
-var list_txt = mapping.split("\n");
-var MAP_BOOKNAMES = {};
-for (var i = 0; i < list_txt.length; i++) {
-    var txt = list_txt[i].trim();
-    var name_val = txt.split(/\s+/);
-    MAP_BOOKNAMES[name_val[0]] = name_val.slice(1).join(" ");
-
-}
-</script>
-  </head>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" i
+        ntegrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" 
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+        crossorigin="anonymous"></script>
+    
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="script.js" defer></script>
+  </head>  
   <body>
-
-<div class="container">
+    <div class="container">
   <h1>经文查询</h1>
 
-  <form id="target">
+  <form id="target" method="GET">
     <div class="form-group">
-      <label for="exampleInputEmail1">书名 及章节， 如： 诗 95:1-3 </label>
+      <label for="exampleInputEmail1">
+	支持两类查询：
+	<ol><li>书名 及章节，书名后需要一个空格，多节用逗号(只接受英文模式字符)分隔，
+	    可输入多行，查询多个章节，比如<br>
+
+<pre><code>	诗 95:1-3,5-10
+	出 25:31-40</code></pre>
+	  <li>     或者每一行输入daily读经计划， 例如：<br>
+<pre><code>     星期一 創世紀第13章 以賽亞書第32章
+     星期二 創世紀第14章 以賽亞書第31章第1节</code></pre>
+	  </li>
+      </ol></label>
       <textarea rows="8" name="book" class="form-control" id="book" aria-describedby="emailHelp" placeholder="诗 95:1-3"></textarea>
-      
-      <small id="emailHelp" class="form-text text-muted">只能输入一个书名及章， 多节用逗号(只接受英文模式字符)分隔，诗 95:1-3,5-10</small>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
@@ -122,157 +56,39 @@ for (var i = 0; i < list_txt.length; i++) {
 </div>
 <div class="container" id="result">
 
-<div id='day0'></div>
-<div id='day1'></div>
-<div id='day2'></div>
-<div id='day3'></div>
-<div id='day4'></div>
-<div id='day5'></div>
+  <div id="day0"></div>
+  <div id="day1"></div>
+  <div id="day2"></div>
+  <div id="day3"></div>
+  <div id="day4"></div>
+<div id="day5"></div>
+<div id="day6"></div>
+<div id="day7"></div>
+<div id="day8"></div>
   
-
 </div>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+
+    
 <script>
-
-  function fetchBibleTo(task, divid) {
-
-      var idx_di = task.indexOf('第');
-      var book = task.substring(0, idx_di);
-      var ch = task.substring(idx_di);
-      var param='1';
-      
-      var re = /第([\d-]+)/g;
-      match = ch.match(re);
-      if (match) {
-	  if (match[0].indexOf('第') == 0) {
-	      param = match[0].substring(1);
-	  } else {
-	      param = match[0];
-	  }
-
-	  if (match.length == 2) {
-	      param += ':';
-
-	      if (match[1].indexOf('第') == 0) {
-		  param += match[1].substring(1);
-	      } else {
-		  param += match[1];
-	      }   
-	  }
-	  
-      } 
-      var bookNameEng = MAP_BOOKNAMES[book];
-      //console.log("about to query " + bookNameEng + ":" + param);
-  jQuery.ajax({
-      url:'https://getbible.net/json',
-      dataType: 'jsonp',
-      data: 'v=cut&p=' + bookNameEng + param,
-      jsonp: 'getbible',
-      success: function(json){
-          // set text direction
-          // check response type
-          if (json.type == 'verse'){
-              var output = '';
-              	jQuery.each(json.book, function(index, value) {
-                  	output += '<center><b>'+value.book_name+' '+value.chapter_nr+'</b></center><br/><p>';
-                      jQuery.each(value.chapter, function(index, value) {
-                          output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
-                          output += value.verse;
-                          output += '<br/>';
-                      });
-                      output += '</p>';
-              	});
-              jQuery(divid).html('<div>' + output + '</div>');
-          } else if (json.type == 'chapter'){
-              var output = '<center><b>'+json.book_name+' '+json.chapter_nr+'</b></center><br/><p>';
-              jQuery.each(json.chapter, function(index, value) {
-                  output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
-                  output += value.verse;
-                  output += '<br/>';
-              });
-              output += '</p>';
-	      jQuery(divid).html('<div>' + output + '</div>');
-          } else if (json.type == 'book'){
-              var output = '';
-              jQuery.each(json.book, function(index, value) {
-                  output += '<center><b>'+json.book_name+' '+value.chapter_nr+'</b></center><br/><p>';
-                  jQuery.each(value.chapter, function(index, value) {
-                      output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
-                      output += value.verse;
-                      output += '<br/>';
-                  });
-		  output += '</p>';
-		  jQuery(divid).html('<div>' + output + '</div>');
-          });
-
-        }
-      },
-      error:function(){
-          jQuery('#result').html('<h2>No scripture was returned, please try again!</h2>'); // <---- this is the div id we update
-       },
-  });
-  }
-  
-
-
   $("#target").submit(function( event ) {
-      var book = $("textarea[name=book]").val();
-      //$('#result').text (book);
       event.preventDefault();
-      weekdays = ['星期一','星期二','星期三','星期四','星期五','星期六'];
-      lines = book.split("\n");
-      tasksA = {};
-      tasksB = {};
-    
-      for (var i=0; i< lines.length; i++) {
-	  var txt = lines[i];
-	  txt = txt.trim();
-	  if (txt) {
-	      tokens = txt.split(' ');
-	      //console.log(tokens);
-	      if (tokens.length==3) {
-		  tasksA[tokens[0]] = tokens[1];
-		  tasksB[tokens[0]] = tokens[2];
-	      }
-	  }
+
+      for (var i=0; i<8; i++) {
+	  jQuery('#day'+i).empty();
       }
-      for (var i = 0; i < weekdays.length; i++) {
-	  var dw = weekdays[i];
-	  var didcontainer = '#day'+i;
 
-	  if (dw in tasksA) {
-	        // Frind the first whitespace
-
-	      var divid = 'taskA' + i;
-	      jQuery(didcontainer).append('<div class="alert alert-success" role="alert"> <h4 class="alert-heading">' + dw + ": " + tasksA[dw]
-					  + '</h4></div>');
-	      jQuery(didcontainer).append('<div id=' + divid +'></div>');
-
-	      fetchBibleTo(tasksA[dw], '#' + divid);
-	  }
-	  if (dw in tasksB) {
-	        // Frind the first whitespace
-
-	      var divid = 'taskB' + i;
-
-	      jQuery(didcontainer).append(' <div class="alert alert-success" role="alert"><h4 class="alert-heading">' + dw + ": " + tasksB[dw]
-					  + '</h4></div>');
-
-	      
-	      jQuery(didcontainer).append('<div id=' + divid +'></div>');
-
-	      fetchBibleTo(tasksB[dw], '#' + divid);
-	  }
+      var book = $("textarea[name=book]").val();
+      console.log("processing event ", book);
+      if (book.indexOf('星期') >= 0) {
+	  processDailyTaskQuery(book);
+      } else {
+	  console.log("processing event query ");
+	  processQuery(book);
       }
-    
-    // Split:
-    //星期一 創世紀第13章 以賽亞書第32章
-//星期二 詩篇第13篇 啟示錄第11章第2節
-//星期三 創世紀第14章 以賽亞書第33章
-//星期四 詩篇第14篇 啟示錄第11章第3節
-//星期五 創世紀第15章 以賽亞書第34章
-//星期六 詩篇第15篇 啟示錄第11章第4節
-  });
-</script>
-
-</body>
+});
+    </script>
+  </body>
 </html>
