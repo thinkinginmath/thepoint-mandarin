@@ -96,7 +96,7 @@ var BIBLE_BOOKS = `創世紀 Ge
 詩篇 Ps
 詩 Ps
 诗篇 Ps
-诗Ps
+诗 Ps
 
 箴言 Pr
 箴 Pr
@@ -111,12 +111,12 @@ var BIBLE_BOOKS = `創世紀 Ge
 雅歌 Sg
 歌 Sg
 雅歌 Sg
-歌Sg
+歌 Sg
 
 以賽亞書 Is
 賽 Is
 以赛亚 Is
-赛Is
+赛 Is
 
 耶利米書 Jr
 耶 Jr
@@ -375,7 +375,8 @@ function processTask(task, divId) {
 		          param += match[1].substring(1);
 	         } else {
 		          param += match[1];
-	         }   
+	         }
+		  console.log("section", param);
 	      }
       } 
       var bookNameEng = MAP_BOOKNAMES[book];
