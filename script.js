@@ -13,65 +13,65 @@ var BIBLE_BOOKS = `創世紀 Ge
 出埃及记 Ex
 出 Ex
 
-利未記 Lv
-利 Lv
-利未记 Lv
-利 Lv
+利未記 Le
+利 Le
+利未记 Le
+利 Le
 
-民數記 Nb
-民 Nb
-民数记 Nb
-民 Nb
+民數記 Nu
+民 Nu
+民数记 Nu
+民 Nu
 
-申命記 Dt
-申 Dt
-申命记 Dt
-申 Dt
+申命記 De
+申 De
+申命记 De
+申 De
 
 約書亞記 Jos
 書 Jos
 约书亚记 Jos
 书 Jos
 
-士師記 Jg
-士 Jg
-士师记 Jg
-士 Jg
+士師記 Ju
+士 Ju
+士师记 Ju
+士 Ju
 
-路得記 Rt
-得 Rt
-路得记 Rt
-得 Rt
+路得記 Ru
+得 Ru
+路得记 Ru
+得 Ru
 
-撒母耳記上 1S
-撒上 1S
-撒母耳记上1S
-撒上 1S
+撒母耳記上 1 S
+撒上 1 S
+撒母耳记上 1 S
+撒上 1 S
 
-撒母耳記下 2S
-撒下 2S
-撒母耳记下 2S
-撒下2S
+撒母耳記下 2 S
+撒下 2 S
+撒母耳记下 2 S
+撒下 2 S
 
-列王紀上 1K
-王上 1K
-列王纪上 1K
-王上 1K
+列王紀上 1 K
+王上 1 K
+列王纪上 1 K
+王上 1 K
 
-列王紀下 2K
-王下 2K
-列王纪下 2K
-王下 2K
+列王紀下 2 K
+王下 2 K
+列王纪下 2 K
+王下 2 K
 
-歷代志上 1Chr
-代上 1Chr
-历代志上 1Chr
-代上 1Chr
+歷代志上 1 Chr
+代上 1 Chr
+历代志上 1 Chr
+代上 1 Chr
 
-歷代志下 2Chr
-代下 2Chr
-历代志下 2Chr
-代下2Chr
+歷代志下 2 Chr
+代下 2 Chr
+历代志下 2 Chr
+代下 2 Chr
 
 以斯拉記 Ezr
 拉 Ezr
@@ -88,10 +88,10 @@ var BIBLE_BOOKS = `創世紀 Ge
 以斯帖记 Est
 斯 Est
 
-約伯記 Jb
-伯 Jb
-约伯记 Jb
-伯 Jb
+約伯記 Job
+伯 Job
+约伯记 Job
+伯 Job
 
 詩篇 Ps
 詩 Ps
@@ -103,65 +103,65 @@ var BIBLE_BOOKS = `創世紀 Ge
 箴言 Pr
 箴 Pr
 
-傳道書 Qo
-傳 Qo
-传道书 Qo
-传 Qo
+傳道書 Ec
+傳 Ec
+传道书 Ec
+传 Ec
 
-雅歌 Sg
-歌 Sg
-雅歌 Sg
-歌 Sg
+雅歌 Song
+歌 Song
+雅歌 Song
+歌 Song
 
 以賽亞書 Is
 賽 Is
 以赛亚 Is
 赛 Is
 
-耶利米書 Jr
-耶 Jr
-耶利米书 Jr
-耶 Jr
+耶利米書 Je
+耶 Je
+耶利米书 Je
+耶 Je
 
-耶利米哀歌 Lm
-哀 Lm
-耶利米哀歌 Lm
-哀 Lm
+耶利米哀歌 La
+哀 La
+耶利米哀歌 La
+哀 La
 
-以西結書 Ezk
-結 Ezk
-以西结书 Ezk
-结 Ezk
+以西結書 Ez
+結 Ez
+以西结书 Ez
+结 Ez
 
-但以理書 Dn
-但 Dn
-但以理书 Dn
-但 Dn
+但以理書 Da
+但 Da
+但以理书 Da
+但 Da
 
 何西阿書 Ho
 何 Ho
 何西阿书 Ho
 何 Ho
 
-約珥書 Jl
-珥 Jl
-约珥书 Jl
-珥 Jl
+約珥書 Joel
+珥 Joel
+约珥书 Joel
+珥 Joel
 
 阿摩司書 Am
 摩 Am
 阿摩司书 Am
 摩 Am
 
-俄巴底亞書 Ob
-俄 Ob
-俄巴底亚书 Ob
-俄 Ob
+俄巴底亞書 Obad
+俄 Obad
+俄巴底亚书 Obad
+俄 Obad
 
-約拿書 Jon
-拿 Jon
-约拿书 Jon
-拿 Jon
+約拿書 Jona
+拿 Jona
+约拿书 Jona
+拿 Jona
 
 彌迦書 Mi
 彌 Mi
@@ -173,40 +173,40 @@ var BIBLE_BOOKS = `創世紀 Ge
 那鸿书 Na
 鸿 Na
 
-哈巴谷書 Hab
-哈 Hab
-哈巴谷书 Hab
-哈 Hab
+哈巴谷書 Ha
+哈 Ha
+哈巴谷书 Ha
+哈 Ha
 
-西番雅書 Zp
-番 Zp
-西番雅书 Zp
-番 Zp
+西番雅書 Zeph
+番 Zeph
+西番雅书 Zeph
+番 Zeph
 
-哈該書 Hg
-該 Hg
-哈该书 Hg
-该 Hg
+哈該書 Hagg
+該 Hagg
+哈该书 Hagg
+该 Hagg
 
-撒迦利亞書 Zc
-亞 Zc
-撒迦利亚书 Zc
-亚 Zc
+撒迦利亞書 Zech
+亞 Zech
+撒迦利亚书 Zech
+亚 Zech
 
-瑪拉基書 Ml
-瑪 Ml
-玛拉基书 Ml
-玛 Ml
+瑪拉基書 Ma
+瑪 Ma
+玛拉基书 Ma
+玛 Ma
 
 馬太福音 Mt
 太 Mt
 马太福音 Mt
 太 Mt
 
-馬可福音 Mk
-可 Mk
-马可福音 Mk
-可 Mk
+馬可福音 Mak
+可 Mak
+马可福音 Mak
+可 Mak
 
 路加福音 Lk
 路 Lk
@@ -218,15 +218,15 @@ var BIBLE_BOOKS = `創世紀 Ge
 约翰福音 Jn
 约 Jn
 
-使徒行傳 Ac
-徒 Ac
-使徒行传 Ac
-徒 Ac
+使徒行傳 Acts
+徒 Acts
+使徒行传 Acts
+徒 Acts
 
-羅馬書 Rm
-羅 Rm
-罗马书 Rm
-罗 Rm
+羅馬書 Ro
+羅 Ro
+罗马书 Ro
+罗 Ro
 
 哥林多前書 1 Co
 林前 1 Co
@@ -248,90 +248,90 @@ var BIBLE_BOOKS = `創世紀 Ge
 以弗所书 Ep
 弗 Ep
 
-腓立比書 Ph
-腓 Ph
-腓立比书 Ph
-腓 Ph
+腓立比書 Phl
+腓 Phl
+腓立比书 Phl
+腓 Phl
 
-歌羅西書 Col
-西 Col
-歌罗西书 Col
-西 Col
+歌羅西書 Co
+西 Co
+歌罗西书 Co
+西 Co
 
 帖撒羅尼迦前書 1 Th
 帖前 1 Th
 帖撒罗尼迦前书 1 Th
 帖前 1 Th
 
-帖撒羅尼迦後書2 Th
-帖後2 Th
+帖撒羅尼迦後書 2 Th
+帖後 2 Th
 帖撒罗尼迦后书 2 Th
 帖后 2 Th
 
-提摩太前書 1 Tm
-提前 1 Tm
-提摩太前书 1 Tm
-提前 1 Tm
+提摩太前書 1 Ti
+提前 1 Ti
+提摩太前书 1 Ti
+提前 1 Ti
 
-提摩太後書 2 Tm
-提後 2 Tm
-提摩太后书 2 Tm
-弟後 2 Tm
+提摩太後書 2 Ti
+提後 2 Ti
+提摩太后书 2 Ti
+弟後 2 Ti
 
-提多書 Tt
-多 Tt
-提多书 Tt
-多 Tt
+提多書 Tit
+多 Tit
+提多书 Tit
+多 Tit
 
 腓利門書 Phm
 門 Phm
 腓利门书 Phm
 门 Phm
 
-希伯來書 Heb
-來 Heb
-希伯来书 Heb
-来 Heb
+希伯來書 He
+來 He
+希伯来书 He
+来 He
 
-雅各書 Jm
-雅 Jm
-雅各书 Jm
-雅 Jm
+雅各書 Ja
+雅 Ja
+雅各书 Ja
+雅 Ja
 
-彼得前書 1 P
-彼前 1 P
-彼得前书 1 P
-彼前 1 P
+彼得前書 1 Pe
+彼前 1 Pe
+彼得前书 1 Pe
+彼前 1 Pe
 
-彼得後書 2 P
-彼後 2 P
-彼得后书 2 P
-彼后 2 P
+彼得後書 2 Pe
+彼後 2 Pe
+彼得后书 2 Pe
+彼后 2 Pe
 
-約翰壹書 1 Jn
-約壹 1 Jn
-约翰一书 1 Jn
-约一 1 Jn
+約翰壹書 1 Jhn
+約壹 1 Jhn
+约翰一书 1 Jhn
+约一 1 Jhn
 
-約翰贰書 2 Jn
-約貳 2 Jn
-约翰二书 2 Jn
-约二 2 Jn
+約翰贰書 2 Jhn
+約貳 2 Jhn
+约翰二书 2 Jhn
+约二 2 Jhn
 
-約翰參書 3 Jn
-約參 3 Jn
-约翰三书 3 Jn
-约三 3 Jn
+約翰參書 3 Jhn
+約參 3 Jhn
+约翰三书 3 Jhn
+约三 3 Jhn
 
-猶大書 Ude
-猶 Ude
-犹大书 Ude
-犹 Ude
+猶大書 Jude
+猶 Jude
+犹大书 Jude
+犹 Jude
 
-啟示錄 Rv
-啟 Rv
-启示录 Rv
-启 Rv`
+啟示錄 Re
+啟 Re
+启示录 Re
+启 Re`
 
 
 var MAP_BOOKNAMES = {}
@@ -376,7 +376,7 @@ function processTask(task, divId) {
 	         } else {
 		          param += match[1];
 	         }
-		  console.log("section", param);
+		  //console.log("section", param);
 	      }
       } 
       var bookNameEng = MAP_BOOKNAMES[book];
