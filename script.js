@@ -359,7 +359,7 @@ function processTask(task, divId) {
    var ch = task.substring(idx_di);
    var param = '1';
       
-   var re = /第([\d-]+)/g;
+   var re = /第\s*([\d-]+)/g;
       var match = ch.match(re);
       if (match) {
 	       if (match[0].indexOf('第') == 0) {
