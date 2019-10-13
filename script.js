@@ -3,76 +3,336 @@
 
 // prints "hi" in the browser's dev tools console
 
-var BIBLE_BOOKS = `创	Ge
-創世紀  Ge
-出	Ex
-利	Le
-民	Nu
-申	De
-书	Jos
-士	Ju
-得	Ru
-撒上	1 S
-撒下	2 S
-王上	1 K
-王下	2 K
-代上	1 Chr
-代下	2 Chr
-拉	Ezr
-尼	Ne
-斯	Est
-伯	Job
-诗	Ps
-詩篇    Ps
-箴	Pr
-传	Ec
-歌	Song
-赛	Is
+var BIBLE_BOOKS = `創世紀 Ge
+創 Ge
+创世纪 Ge
+创 Ge
+
+出埃及記 Ex
+出 Ex
+出埃及记 Ex
+出 Ex
+
+利未記 Lv
+利 Lv
+利未记 Lv
+利 Lv
+
+民數記 Nb
+民 Nb
+民数记 Nb
+民 Nb
+
+申命記 Dt
+申 Dt
+申命记 Dt
+申 Dt
+
+約書亞記 Jos
+書 Jos
+约书亚记 Jos
+书 Jos
+
+士師記 Jg
+士 Jg
+士师记 Jg
+士 Jg
+
+路得記 Rt
+得 Rt
+路得记 Rt
+得 Rt
+
+撒母耳記上 1S
+撒上 1S
+撒母耳记上1S
+撒上 1S
+
+撒母耳記下 2S
+撒下 2S
+撒母耳记下 2S
+撒下2S
+
+列王紀上 1K
+王上 1K
+列王纪上 1K
+王上 1K
+
+列王紀下 2K
+王下 2K
+列王纪下 2K
+王下 2K
+
+歷代志上 1Chr
+代上 1Chr
+历代志上 1Chr
+代上 1Chr
+
+歷代志下 2Chr
+代下 2Chr
+历代志下 2Chr
+代下2Chr
+
+以斯拉記 Ezr
+拉 Ezr
+以斯拉记 Ezr
+拉 Ezr
+
+尼希米記 Ne
+尼 Ne
+尼希米记 Ne
+尼 Ne
+
+以斯帖記 Est
+斯 Est
+以斯帖记 Est
+斯 Est
+
+約伯記 Jb
+伯 Jb
+约伯记 Jb
+伯 Jb
+
+詩篇 Ps
+詩 Ps
+诗篇 Ps
+诗Ps
+
+箴言 Pr
+箴 Pr
+箴言 Pr
+箴 Pr
+
+傳道書 Qo
+傳 Qo
+传道书 Qo
+传 Qo
+
+雅歌 Sg
+歌 Sg
+雅歌 Sg
+歌Sg
+
 以賽亞書 Is
-耶	Je
-哀	La
-结	Ez
-但	Da
-何	Ho
-珥	Joel
-摩	Am
-俄	Obad
-拿	Jona
-弥	Mi
-鸿	Na
-哈	Ha
-番	Zeph
-该	Hagg
-亚	Zech
-玛	Ma
-太	Mt
-可	Mak
-路	Lk
-约	Jn
-徒	Acts
-罗	Ro
-林前	1 Co
-林后	2 Co
-加	Ga
-弗	Ep
-腓	Phl
-西	Co
-帖前	1 Th
-帖后	2 Th
-提前	1 Ti
-提后	2 Ti
-多	Tit
-门	Phm
-来	He
-雅	Ja
-彼前 1 Pe
-彼后 2 Pe
-约一 1 Jhn
-约二 2 Jhn
-约三 3 Jhn
-犹 Jude
-啟示錄 Re
-启 Re`;
+賽 Is
+以赛亚 Is
+赛Is
+
+耶利米書 Jr
+耶 Jr
+耶利米书 Jr
+耶 Jr
+
+耶利米哀歌 Lm
+哀 Lm
+耶利米哀歌 Lm
+哀 Lm
+
+以西結書 Ezk
+結 Ezk
+以西结书 Ezk
+结 Ezk
+
+但以理書 Dn
+但 Dn
+但以理书 Dn
+但 Dn
+
+何西阿書 Ho
+何 Ho
+何西阿书 Ho
+何 Ho
+
+約珥書 Jl
+珥 Jl
+约珥书 Jl
+珥 Jl
+
+阿摩司書 Am
+摩 Am
+阿摩司书 Am
+摩 Am
+
+俄巴底亞書 Ob
+俄 Ob
+俄巴底亚书 Ob
+俄 Ob
+
+約拿書 Jon
+拿 Jon
+约拿书 Jon
+拿 Jon
+
+彌迦書 Mi
+彌 Mi
+弥迦书 Mi
+弥 Mi
+
+那鴻書 Na
+鴻 Na
+那鸿书 Na
+鸿 Na
+
+哈巴谷書 Hab
+哈 Hab
+哈巴谷书 Hab
+哈 Hab
+
+西番雅書 Zp
+番 Zp
+西番雅书 Zp
+番 Zp
+
+哈該書 Hg
+該 Hg
+哈该书 Hg
+该 Hg
+
+撒迦利亞書 Zc
+亞 Zc
+撒迦利亚书 Zc
+亚 Zc
+
+瑪拉基書 Ml
+瑪 Ml
+玛拉基书 Ml
+玛 Ml
+
+馬太福音 Mt
+太 Mt
+马太福音 Mt
+太 Mt
+
+馬可福音 Mk
+可 Mk
+马可福音 Mk
+可 Mk
+
+路加福音 Lk
+路 Lk
+路加福音 Lk
+路 Lk
+
+約翰福音 Jn
+約 Jn
+约翰福音 Jn
+约 Jn
+
+使徒行傳 Ac
+徒 Ac
+使徒行传 Ac
+徒 Ac
+
+羅馬書 Rm
+羅 Rm
+罗马书 Rm
+罗 Rm
+
+哥林多前書 1 Co
+林前 1 Co
+哥林多前书 1 Co
+林前 1 Co
+
+哥林多後書 2 Co
+林後 2 Co
+哥林多后书 2 Co
+林后 2 Co
+
+加拉太書 Ga
+加 Ga
+加拉太书 Ga
+加 Ga
+
+以弗所書 Ep
+弗 Ep
+以弗所书 Ep
+弗 Ep
+
+腓立比書 Ph
+腓 Ph
+腓立比书 Ph
+腓 Ph
+
+歌羅西書 Col
+西 Col
+歌罗西书 Col
+西 Col
+
+帖撒羅尼迦前書 1 Th
+帖前 1 Th
+帖撒罗尼迦前书 1 Th
+帖前 1 Th
+
+帖撒羅尼迦後書2 Th
+帖後2 Th
+帖撒罗尼迦后书 2 Th
+帖后 2 Th
+
+提摩太前書 1 Tm
+提前 1 Tm
+提摩太前书 1 Tm
+提前 1 Tm
+
+提摩太後書 2 Tm
+提後 2 Tm
+提摩太后书 2 Tm
+弟後 2 Tm
+
+提多書 Tt
+多 Tt
+提多书 Tt
+多 Tt
+
+腓利門書 Phm
+門 Phm
+腓利门书 Phm
+门 Phm
+
+希伯來書 Heb
+來 Heb
+希伯来书 Heb
+来 Heb
+
+雅各書 Jm
+雅 Jm
+雅各书 Jm
+雅 Jm
+
+彼得前書 1 P
+彼前 1 P
+彼得前书 1 P
+彼前 1 P
+
+彼得後書 2 P
+彼後 2 P
+彼得后书 2 P
+彼后 2 P
+
+約翰壹書 1 Jn
+約壹 1 Jn
+约翰一书 1 Jn
+约一 1 Jn
+
+約翰贰書 2 Jn
+約貳 2 Jn
+约翰二书 2 Jn
+约二 2 Jn
+
+約翰參書 3 Jn
+約參 3 Jn
+约翰三书 3 Jn
+约三 3 Jn
+
+猶大書 Ude
+猶 Ude
+犹大书 Ude
+犹 Ude
+
+啟示錄 Rv
+啟 Rv
+启示录 Rv
+启 Rv`
+
 
 var MAP_BOOKNAMES = {}
 build_bookmap();
@@ -80,10 +340,12 @@ build_bookmap();
 function build_bookmap() {
   var bookList = BIBLE_BOOKS.split("\n");
   for (var i = 0; i < bookList.length; i++) {
-    var txt = bookList[i].trim();
-    var nameVal = txt.split(/\s+/);
-    MAP_BOOKNAMES[nameVal[0]] = nameVal.slice(1).join(" ");
-  }  
+      var txt = bookList[i].trim();
+      if (txt) {
+	  var nameVal = txt.split(/\s+/);
+	  MAP_BOOKNAMES[nameVal[0]] = nameVal.slice(1).join(" ");
+      }
+  }
 }
 
 // Daily bible tasks: 
