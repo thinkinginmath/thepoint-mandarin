@@ -1,0 +1,25 @@
+{
+  "name": "thepoint-mandarin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "webpack --mode development",
+      "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weidongshao/thepoint-mandarin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weidongshao/thepoint-mandarin/issues"
+  },
+  "homepage": "https://github.com/weidongshao/thepoint-mandarin#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
