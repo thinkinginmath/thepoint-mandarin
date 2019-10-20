@@ -3,7 +3,7 @@
 
 // prints "hi" in the browser's dev tools console
 
-var BIBLE_BOOKS = `創世紀 Ge
+const BIBLE_BOOKS = `創世紀 Ge
 創 Ge
 创世纪 Ge
 创 Ge
@@ -333,20 +333,21 @@ var BIBLE_BOOKS = `創世紀 Ge
 启示录 Re
 启 Re`
 
+const  MAP_BOOKNAMES = {}
 
-var MAP_BOOKNAMES = {}
-build_bookmap();
 
-function build_bookmap() {
-  var bookList = BIBLE_BOOKS.split("\n");
+const build_bookmap = function() {
+  let bookList = BIBLE_BOOKS.split("\n");
   for (var i = 0; i < bookList.length; i++) {
-      var txt = bookList[i].trim();
+      let txt = bookList[i].trim();
       if (txt) {
-	  var nameVal = txt.split(/\s+/);
+	  let nameVal = txt.split(/\s+/);
 	  MAP_BOOKNAMES[nameVal[0]] = nameVal.slice(1).join(" ");
       }
   }
 }
+
+build_bookmap();
 
 // Daily bible tasks: 
 // 星期一 創世紀第13章 以賽亞書第32章
@@ -354,13 +355,13 @@ function build_bookmap() {
 //   day_of_week  taskA  taskB
 
 function processTask(task, divId) {
-   var idx_di = task.indexOf('第');
-   var book = task.substring(0, idx_di);
-   var ch = task.substring(idx_di);
-   var param = '1';
+   let idx_di = task.indexOf('第');
+   let book = task.substring(0, idx_di);
+   let ch = task.substring(idx_di);
+   let param = '1';
       
-   var re = /第\s*([\d-]+)/g;
-      var match = ch.match(re);
+   let re = /第\s*([\d-]+)/g;
+      let match = ch.match(re);
       if (match) {
 	       if (match[0].indexOf('第') == 0) {
 	          param = match[0].substring(1);
@@ -379,25 +380,25 @@ function processTask(task, divId) {
 		  //console.log("section", param);
 	      }
       } 
-      var bookNameEng = MAP_BOOKNAMES[book];
+      let bookNameEng = MAP_BOOKNAMES[book];
       fetchBibleToDiv(bookNameEng, param, divId)  
 }
 
 function processQuery(books) {
     // Frind the first whitespace
-    var lines = books.split('\n');
-    for (var i=0; i< lines.length; i++) {
-	var txt = lines[i];
+    let lines = books.split('\n');
+    for (let i=0; i< lines.length; i++) {
+	let txt = lines[i];
 	txt = txt.trim();
 	if (txt) {
-	    var pos = txt.indexOf(' ');
-	    var bookName = txt.substring(0, pos);
-	    var param = txt.substring(pos).trim();
+	    let pos = txt.indexOf(' ');
+	    let bookName = txt.substring(0, pos);
+	    let param = txt.substring(pos).trim();
 	    if (bookName in MAP_BOOKNAMES) {
-		var divid = 'resp' + i;
+		let divid = 'resp' + i;
 		jQuery('#day'+i).append(DAILY_DIV + txt + '</h4></div>');
 		jQuery('#day'+i).append('<div id=' + divid +'></div>');
-		var bookNameEng = MAP_BOOKNAMES[bookName];
+		let bookNameEng = MAP_BOOKNAMES[bookName];
 		fetchBibleToDiv(bookNameEng, param, '#' +divid);
 	    } else {
 		console.log("not found ", bookName);
@@ -419,7 +420,7 @@ function fetchBibleToDiv(bookNameEng, param, divId) {
           // set text direction
           // check response type
 	  if (json.type == 'verse'){
-              var output = '';
+              let output = '';
               	jQuery.each(json.book, function(index, value) {
                   	output += '<center><b>' + value.book_name +
                       ' ' + value.chapter_nr + '</b></center><br/><p>';
@@ -433,7 +434,7 @@ function fetchBibleToDiv(bookNameEng, param, divId) {
               jQuery(divId).html(output);
 	      
           } else if (json.type == 'chapter'){
-              var output = '<center><b>'+json.book_name+' '+json.chapter_nr+'</b></center><br/><p>';
+              let output = '<center><b>'+json.book_name+' '+json.chapter_nr+'</b></center><br/><p>';
               jQuery.each(json.chapter, function(index, value) {
                   output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
                   output += value.verse;
@@ -442,7 +443,7 @@ function fetchBibleToDiv(bookNameEng, param, divId) {
               output += '</p>';
 	            jQuery(divId).html('<div>' + output + '</div>');
           } else if (json.type == 'book'){
-              var output = '';
+              let output = '';
               jQuery.each(json.book, function(index, value) {
      output += '<center><b>'+json.book_name+' '+value.chapter_nr+'</b></center><br/><p>';
      jQuery.each(value.chapter, function(index, value) {
@@ -462,33 +463,33 @@ function fetchBibleToDiv(bookNameEng, param, divId) {
   });
 }
 
-var DAILY_DIV = '<div class="alert alert-success" role="alert"> <h4 class="alert-heading">'
+let DAILY_DIV = '<div class="alert alert-success" role="alert"> <h4 class="alert-heading">'
 
 function processDailyTaskQuery(queryVal) {
   event.preventDefault();
-  var weekdays = ['星期一','星期二','星期三','星期四','星期五','星期六'];
-  var lines = queryVal.split("\n");
-  var tasksA = {};
-  var tasksB = {};
+  let weekdays = ['星期一','星期二','星期三','星期四','星期五','星期六'];
+  let lines = queryVal.split("\n");
+  let tasksA = {};
+  let tasksB = {};
     
-  for (var i=0; i< lines.length; i++) {
-	  var txt = lines[i];
+  for (let i=0; i< lines.length; i++) {
+	  let txt = lines[i];
 	  txt = txt.trim();
 	  if (txt) {
-	    var tokens = txt.split(' ');
+	    let tokens = txt.split(' ');
 	    if (tokens.length==3) {
 		    tasksA[tokens[0]] = tokens[1];
 		    tasksB[tokens[0]] = tokens[2];
 	    }
 	  }
   }
-  for (var i = 0; i < weekdays.length; i++) {
-	  var dw = weekdays[i];
-	  var didcontainer = '#day'+i;
+  for (let i = 0; i < weekdays.length; i++) {
+	  let dw = weekdays[i];
+	  let didcontainer = '#day'+i;
 
 	  if (dw in tasksA) {
 	    // Frind the first whitespace
-      var divid = 'taskA' + i;
+      let divid = 'taskA' + i;
 	    jQuery(didcontainer).append(DAILY_DIV + dw + ": " + tasksA[dw] +
                                   '</h4></div>');
       
@@ -498,7 +499,7 @@ function processDailyTaskQuery(queryVal) {
 	  }
 	  if (dw in tasksB) {
 	        // Frind the first whitespace
-	      var divid = 'taskB' + i;
+	      let divid = 'taskB' + i;
 	      jQuery(didcontainer).append(DAILY_DIV + dw + ": " + tasksB[dw]
 					                          + '</h4></div>');
 
@@ -509,3 +510,4 @@ function processDailyTaskQuery(queryVal) {
 	  }
   }
 }
+export { processDailyTaskQuery, processQuery }

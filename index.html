@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="style.css">
     
     <!-- import the webpage's javascript file -->
-    <script src="script.js" defer></script>
+    <script src="./dist/main.bundle.js"></script>
   </head>  
   <body>
     <div class="container">
@@ -83,10 +83,10 @@
       var book = $("textarea[name=book]").val();
       //console.log("processing event ", book);
       if (book.indexOf('星期') >= 0) {
-	  processDailyTaskQuery(book);
+	  bquery.processDailyTaskQuery(book);
       } else {
 	  //console.log("processing event query ");
-	  processQuery(book);
+	  bquery.processQuery(book);
       }
 });
     </script>

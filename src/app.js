@@ -1,0 +1,1 @@
+bquery = require('./script.js');
