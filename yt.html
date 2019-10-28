@@ -26,10 +26,14 @@ function logMessage(message) {
 }
 var player;
 function onYouTubeIframeAPIReady() {
+
+    const urlParams = new URLSearchParams(window.location.search);
+const myParam = urlParams.get('vid');
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'M7lc1UVf-VE',
+          videoId: myParam,
+          enablejsapi: 1, 
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
