@@ -55,6 +55,7 @@ function onPlayerStateChange(event) {
      window.postMessage("play", "*");
   } else {
     window.postMessage("play", "*");
+    window.ReactNativeWebView.postMessage(event.data);
   }
 }
 
