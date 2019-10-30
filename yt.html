@@ -12,7 +12,7 @@
  
  </head>
  <body>
-        <div id="player"></div>
+<div id="player"></div>
 
    <script>
    document.addEventListener("message", function(event) {
@@ -29,6 +29,7 @@ function onYouTubeIframeAPIReady() {
 
     const urlParams = new URLSearchParams(window.location.search);
 const myParam = urlParams.get('vid');
+if (myParam) {
         player = new YT.Player('player', {
           height: '390',
           width: '640',
@@ -40,6 +41,7 @@ const myParam = urlParams.get('vid');
           }
         });
     }
+}
 var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
