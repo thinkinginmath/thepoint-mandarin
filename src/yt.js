@@ -22,7 +22,7 @@ class YTManager {
 
   createPlayer() {
     if (this.videos) {
-        var vid = videos[0];
+        var vid = this.videos[0];
 
         player = new window.YT.Player(this.divid, {
           height: '390',
