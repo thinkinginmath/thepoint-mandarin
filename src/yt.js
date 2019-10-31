@@ -17,7 +17,7 @@ class YTManager {
   constructor(props) {
     this.videos = props.videos.split('.');
     this.divid = props.divid;
-    createPlayer();
+    this.createPlayer();
   }
 
   createPlayer() {
@@ -30,8 +30,8 @@ class YTManager {
           videoId: vid,
           enablejsapi: 1, 
           events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
+            'onReady': this.onPlayerReady,
+            'onStateChange': this.onPlayerStateChange
           }
         });
     } else {
