@@ -30,6 +30,7 @@
     "webpack-cli": "^3.3.9"
   },
   "dependencies": {
-    "qr-encode": "^0.3.0"
+    "qrcode": "^1.4.2",
+    "qrious": "^4.0.2"
   }
 }

@@ -16,7 +16,8 @@
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
   crossorigin="anonymous"></script>
 
-
+  <script type="text/javascript"
+  src="dist/yt.bundle.js"></script>
  </head>
  <body>
    <div class="container">
@@ -30,7 +31,7 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        <div id="qrimg"></div>
+        <div><canvas id="qrimg"></canvas></div>
       
 <div id="player"></div>
 
@@ -50,20 +51,11 @@ var player;
 function onYouTubeIframeAPIReady() {
 
     const urlParams = new URLSearchParams(window.location.search);
-const myParam = urlParams.get('vid');
-if (myParam) {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: myParam,
-          enablejsapi: 1, 
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-    } else {
-
+    const myParam = urlParams.get('v');
+    if (myParam) {
+        
+        ytlink.YTManager({vidoes: myParam,
+          divid: 'player'});
     }
 }
 var tag = document.createElement('script');
@@ -91,17 +83,14 @@ function stopVideo() {
 
  </script>
 
-<script type="text/javascript"
-        src="dist/yt.bundle.js"></script>
+
 
         <script>
         $("#target").submit(function( event ) {
       event.preventDefault();
       var book = $("textarea[name=book]").val();
-      var t = getQRForVideos(book.split('\n'));
-      var img = new Image()
-img.src = t
-$('#qrimg').appendChild(img);
+      var canvas = document.getElementById('qrimg');
+      ytlink.getQRForVideos(book.split('\n'), canvas);
       
 });
         </script>
