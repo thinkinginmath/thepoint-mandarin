@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>经文查询</title>
+    <title>Share YouTube Videos</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,10 +9,32 @@
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
- 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+  crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+  crossorigin="anonymous"></script>
+
+
  </head>
  <body>
+   <div class="container">
+<h2>Share youtube videos instantly</h2>
+      <form id="target" method="POST">
+          <div class="form-group">
+            <label for="exampleInputEmail1">
+       Enter YouTube video links or IDs one in a line   </li>
+            </ol></label>
+            <textarea rows="8" name="book" class="form-control" id="book" aria-describedby="emailHelp" placeholder="诗 95:1-3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="qrimg"></div>
+      
 <div id="player"></div>
+
+</div>
 
    <script>
    document.addEventListener("message", function(event) {
@@ -40,6 +62,8 @@ if (myParam) {
             'onStateChange': onPlayerStateChange
           }
         });
+    } else {
+
     }
 }
 var tag = document.createElement('script');
@@ -69,5 +93,17 @@ function stopVideo() {
 
 <script type="text/javascript"
         src="dist/yt.bundle.js"></script>
+
+        <script>
+        $("#target").submit(function( event ) {
+      event.preventDefault();
+      var book = $("textarea[name=book]").val();
+      var t = getQRForVideos(book.split('\n'));
+      var img = new Image()
+img.src = t
+$('#qrimg').appendChild(img);
+      
+});
+        </script>
    </body>
      </html>
