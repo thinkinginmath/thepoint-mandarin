@@ -59,9 +59,11 @@ https://www.googleapis.com/youtube/v3/videos?key=[YOUR API KEY
   getSnippets() {
     var api_key = 'AIzaSyBS4PMOVmYxKrJF8kiuGVALbIqGDJIi64k';
     var id_query = "id=" + this.videos.join('%2C');
-      $.ajax({url:`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&{id_query}&key={api_key}`})
-      .done(data => {
-console.log(data);
+    var url = "https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&"
+          + id_query + "&key=" + api_key;
+
+    $.ajax({url: url}).done(data => {
+            console.log(data);
       });
     }
   createPlayer() {
