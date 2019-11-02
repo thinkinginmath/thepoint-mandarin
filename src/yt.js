@@ -90,13 +90,13 @@ https://www.googleapis.com/youtube/v3/videos?key=[YOUR API KEY
             for (var video of data.items) {
                var s = video.snippet;
                var title = s.title;
-               var tn_img = s.thumbnails.default.url.split()[0];
+               var tn_img = s.thumbnails.default.url;
                var vid = video.id;
                var duration = YTDurationToSeconds(video.contentDetails.duration);
               $('#snippet').append(
                 `<div>
                 <span class="badge badge-secondary"> ${title}</span><br>
-                <a href="/yt.html?v=${vid}"><img src="${tn_img} width="120" heigth="90"></a><br>
+                <a href="/yt.html?v=${vid}"><img src="${tn_img}" width="120" heigth="90"></a><br>
                 Views: ${video.statistics.viewCount}, Duration: ${duration}
                 </div>`
               )
@@ -110,6 +110,7 @@ https://www.googleapis.com/youtube/v3/videos?key=[YOUR API KEY
         player = new window.YT.Player(this.divid, {
           height: '390',
           width: '640',
+          
           videoId: vid,
           enablejsapi: 1, 
           events: {
