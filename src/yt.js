@@ -92,7 +92,9 @@ console.log(data);
       window.postMessage("play", "*");
     } else {
       window.postMessage("play", "*");
+      if (window.ReactNativeWebView) {
       window.ReactNativeWebView.postMessage(event.data);
+      }
     }
   }
 
