@@ -90,7 +90,7 @@ https://www.googleapis.com/youtube/v3/videos?key=[YOUR API KEY
             for (var video of data.items) {
                var s = video.snippet;
                var title = s.title;
-               var tn_img = s.thumbnails.default.url;
+               var tn_img = s.thumbnails.default.url.split()[0];
                var vid = video.id;
                var duration = YTDurationToSeconds(video.contentDetails.duration);
               $('#snippet').append(
