@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+   
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -16,25 +17,60 @@
   integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
   crossorigin="anonymous"></script>
 
-  <script type="text/javascript"
-  src="dist/yt.bundle.js"></script>
+ <script type="text/javascript"  src="dist/yt.bundle.js"></script>
  </head>
- <body>
-   <div class="container">
-<h2>Share youtube videos instantly</h2>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="logo-2.png" width="160px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Channel <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Cast</a>
+           
+            
+          </div>
+        </div>
+      </nav>
+
+<div class="container" width="800px">
+<div class="row">
+
+  <div class="col-8">
+    <h2>Share YouTube Videos Instantly</h2>
+
+<div id="player"></div>
+</div>
+  
+  <div class="col-4">
+<div id="snippet">
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="container">
+
+  <div class="row">
+    <div class="col-8">
       <form id="target" method="POST">
           <div class="form-group">
             <label for="exampleInputEmail1">
        Enter YouTube video links or IDs one in a line   </li>
             </ol></label>
-            <textarea rows="8" name="book" class="form-control" id="book" aria-describedby="emailHelp" placeholder="诗 95:1-3"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+            <textarea rows="8" cols="50" name="book" class="form-control" id="book" 
+            aria-describedby="emailHelp" placeholder="put youtube url here"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Share</button>
         </form>
-        <div><canvas id="qrimg"></canvas></div>
-      
-<div id="player"></div>
 
+        <div id="share-title"></div>
+        <div><canvas id="qrimg"></canvas></div>
+      </div>
+  </div>
 </div>
 
    <script>
@@ -48,6 +84,11 @@ function logMessage(message) {
     log.append((new Date()) + " " + message + "\n");
 }
 var player;
+
+function initYT() {
+  console.log(gapi.client);
+  //gapi.client.setApiKey("");
+}
 function onYouTubeIframeAPIReady() {
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -63,6 +104,7 @@ var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 
 function onPlayerReady(event) {
         event.target.playVideo();
@@ -82,6 +124,7 @@ function stopVideo() {
   }
 
  </script>
+<!--script src="https://apis.google.com/js/api.js?onload=initYT"></script-->
 
 
 
@@ -90,7 +133,7 @@ function stopVideo() {
       event.preventDefault();
       var book = $("textarea[name=book]").val();
       var canvas = document.getElementById('qrimg');
-      ytlink.getQRForVideos(book.split('\n'), canvas);
+      ytlink.getQRForVideos(book.split('\n'), canvas, '#share-title');
       
 });
         </script>
