@@ -32,7 +32,7 @@ function getQRForVideos(videos, canvas, divid) {
       vids.push(video_id);
     }
 
-    var url = 'http://weidongshao.github.io/thepoint-mandarin/yt.html?v=' + vids.join('.');
+    var url = 'https://weidongshao.github.io/thepoint-mandarin/yt.html?v=' + vids.join('.');
     console.log("share URL ", url);
 
     $(divid).html('<h3>Scan this to watch videos</h3>');
@@ -59,7 +59,7 @@ https://www.googleapis.com/youtube/v3/videos?key=[YOUR API KEY
   getSnippets() {
     var api_key = 'AIzaSyBS4PMOVmYxKrJF8kiuGVALbIqGDJIi64k';
     var id_query = "id=" + this.videos.join('%2C');
-      $.ajax({url:`http://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&{id_query}&key={api_key}`})
+      $.ajax({url:`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&{id_query}&key={api_key}`})
       .done(data => {
 console.log(data);
       });
