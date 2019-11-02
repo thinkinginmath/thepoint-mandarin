@@ -1,3 +1,4 @@
+import { domainToASCII } from 'url';
 
 var QRCode = require('qrcode')
 
@@ -43,6 +44,28 @@ function getQRForVideos(videos, canvas, divid) {
     });
 }
 
+function YTDurationToSeconds(duration) {
+  var match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+
+  match = match.slice(1).map(function(x) {
+    if (x != null) {
+        return x.replace(/\D/, '');
+    }
+  });
+
+  var hours = (parseInt(match[0]) || 0) +'';
+  var minutes = (parseInt(match[1]) || 0) +'';
+  var seconds = (parseInt(match[2]) || 0) + '';
+
+  minutes = minutes.padStart(2, '0');
+  seconds = seconds.padStart(2, '0');
+  
+  var dt = minutes + ':' + seconds;
+  if (hours) {
+      dt = hours + dt;
+  }
+  return dt;
+}
 class YTManager {
   constructor(props) {
     this.videos = props.videos.split('.');
@@ -64,6 +87,20 @@ https://www.googleapis.com/youtube/v3/videos?key=[YOUR API KEY
 
     $.ajax({url: url}).done(data => {
             console.log(data);
+            for (var video of data.items) {
+               var s = video.snippet;
+               var title = s.title;
+               var tn_img = s.thumbnails.default.url;
+               var vid = video.id;
+               var duration = YTDurationToSeconds(video.contentDetails.duration);
+              $('#snippet').insert(
+                `<div>
+                <span class="badge badge-secondary"> ${title}</span><br>
+                <a href="/yt.html?v=${vid}"><img src="${tn_img} width="120" heigth="90"></a><br>
+                Views: ${video.statistics.viewCount}, Duration: ${duration}
+                </div>`
+              )
+            }
       });
     }
   createPlayer() {
