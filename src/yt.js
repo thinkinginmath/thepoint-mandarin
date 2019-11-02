@@ -93,7 +93,7 @@ https://www.googleapis.com/youtube/v3/videos?key=[YOUR API KEY
                var tn_img = s.thumbnails.default.url;
                var vid = video.id;
                var duration = YTDurationToSeconds(video.contentDetails.duration);
-              $('#snippet').insert(
+              $('#snippet').append(
                 `<div>
                 <span class="badge badge-secondary"> ${title}</span><br>
                 <a href="/yt.html?v=${vid}"><img src="${tn_img} width="120" heigth="90"></a><br>
