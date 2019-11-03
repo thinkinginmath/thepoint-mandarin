@@ -21,21 +21,21 @@
  </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img src="logo-2.png" width="160px"></a>
+        <a class="navbar-brand" href="#"><img src="logo-3.png" width="160px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Channel <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Cast</a>
+            <a class="nav-item nav-link" href="cast.html">Cast</a>
           </div>
         </div>
       </nav>
-      <div class="container">
+      <div class="container" id="paste-bin">
 
           <div class="row">
-            <div class="col-8">
+            <div class="col-10">
                 <h2>Share YouTube Videos Instantly</h2>
               <form id="target" method="POST">
                   <div class="form-group">
@@ -89,15 +89,23 @@ var player;
 function initYT() {
   console.log(gapi.client);
   //gapi.client.setApiKey("");
-}
+   }
+
+   function playVideo(event) {
+     console.log(event);
+     // event.preventDefault();
+     // var n = event.target;
+     window.ytmgr.playVideo(event);
+   }
 function onYouTubeIframeAPIReady() {
 
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('v');
     if (myParam) {
         
-        new ytlink.YTManager({videos: myParam,
-          divid: 'player'});
+        window.ytmgr = new ytlink.YTManager({videos: myParam,
+   divid: 'player'});
+   $('#paste-bin').hide();
     }
 }
 var tag = document.createElement('script');
