@@ -33,7 +33,7 @@ function getQRForVideos(videos, canvas, divid) {
       vids.push(video_id);
     }
 
-    var url = 'https://weidongshao.github.io/thepoint-mandarin/yt.html?v=' + vids.join('.');
+    var url = 'https://www.9song.tv/yt.html?v=' + vids.join('.');
     console.log("share URL ", url);
 
     $(divid).html('<h3>Scan this to watch videos</h3>');
@@ -96,7 +96,7 @@ https://www.googleapis.com/youtube/v3/videos?key=[YOUR API KEY
               $('#snippet').append(
                 `<div>
                 <span class="badge badge-secondary"> ${title}</span><br>
-                <a href="/yt.html?v=${vid}"><img src="${tn_img}" width="120" heigth="90"></a><br>
+                <a href="/index.html?v=${vid}"><img src="${tn_img}" width="120" heigth="90"></a><br>
                 Views: ${video.statistics.viewCount}, Duration: ${duration}
                 </div>`
               )

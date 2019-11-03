@@ -29,11 +29,31 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link active" href="#">Channel <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="#">Cast</a>
-           
-            
           </div>
         </div>
       </nav>
+      <div class="container">
+
+          <div class="row">
+            <div class="col-8">
+                <h2>Share YouTube Videos Instantly</h2>
+              <form id="target" method="POST">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">
+               Enter YouTube video links or IDs one in a line   </li>
+                    </ol></label>
+                    <textarea rows="8" cols="50" name="book" class="form-control" id="book" 
+                    aria-describedby="emailHelp" placeholder="put youtube url here"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Share</button>
+                </form>
+        
+                <div id="share-title"></div>
+                <div><canvas id="qrimg"></canvas></div>
+              </div>
+          </div>
+        </div>
+
 
 <div class="container" width="800px">
 <div class="row">
@@ -52,27 +72,7 @@
 </div>
 
 </div>
-<div class="container">
 
-  <div class="row">
-    <div class="col-8">
-        <h2>Share YouTube Videos Instantly</h2>
-      <form id="target" method="POST">
-          <div class="form-group">
-            <label for="exampleInputEmail1">
-       Enter YouTube video links or IDs one in a line   </li>
-            </ol></label>
-            <textarea rows="8" cols="50" name="book" class="form-control" id="book" 
-            aria-describedby="emailHelp" placeholder="put youtube url here"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Share</button>
-        </form>
-
-        <div id="share-title"></div>
-        <div><canvas id="qrimg"></canvas></div>
-      </div>
-  </div>
-</div>
 
    <script>
    document.addEventListener("message", function(event) {
