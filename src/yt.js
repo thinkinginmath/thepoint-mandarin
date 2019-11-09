@@ -33,7 +33,7 @@ function getQRForVideos(videos, canvas, divid) {
       vids.push(video_id);
     }
 
-    var url = 'https://www.9song.tv/?v=' + vids.join('.');
+    var url = 'https://mymedia.tv/?v=' + vids.join('.');
     console.log("share URL ", url);
 
     $(divid).html(`<h3>Scan it or <a href="${url}">watch videos here</a> </h3>`);
