@@ -408,6 +408,11 @@ function processQuery(books) {
     }
 }
 
+function replaceSpace(verse) {
+    var result = verse.replace(/(\S) /g, "$1");
+    return result;
+}
+
 function fetchBibleToDiv(bookNameEng, param, divId) {
   jQuery.ajax({
       url:'https://getbible.net/json',
@@ -426,7 +431,7 @@ function fetchBibleToDiv(bookNameEng, param, divId) {
                       ' ' + value.chapter_nr + '</b></center><br/><p>';
                     jQuery.each(value.chapter, function(index, value) {
                           output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
-                          output += value.verse;
+                        output += replaceSpace(value.verse);
                           output += '<br/>';
                       });
                       output += '</p>';
@@ -437,7 +442,7 @@ function fetchBibleToDiv(bookNameEng, param, divId) {
               let output = '<center><b>'+json.book_name+' '+json.chapter_nr+'</b></center><br/><p>';
               jQuery.each(json.chapter, function(index, value) {
                   output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
-                  output += value.verse;
+                  output += replaceSpace(value.verse);
                   output += '<br/>';
               });
               output += '</p>';
@@ -448,7 +453,7 @@ function fetchBibleToDiv(bookNameEng, param, divId) {
      output += '<center><b>'+json.book_name+' '+value.chapter_nr+'</b></center><br/><p>';
      jQuery.each(value.chapter, function(index, value) {
      output += '  <small class="ltr">' +value.verse_nr+ '</small>  ';
-     output += value.verse;
+     output += replaceSpace(value.verse);
      output += '<br/>';
            });
 		          output += '</p>';
